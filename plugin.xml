@@ -37,7 +37,15 @@
 
         <!-- frameworks -->
         <framework src="CoreBluetooth.framework" />
-        <framework src="iOSDFULibrary" type="podspec" spec="~> 4.12.0"/>
+
+        <podspec>
+            <config>
+                <source url="https://github.com/CocoaPods/Specs.git"/>
+            </config>
+            <pods use-frameworks="true">
+                <pod name="iOSDFULibrary" spec="~> 4.12.0" />
+            </pods>
+        </podspec>
 
         <hook type="before_plugin_install" src="hooks/ios_pod_extra_settings.js" />
 
